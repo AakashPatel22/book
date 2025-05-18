@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-service
+  namespace: movie-app
+spec:
+  selector:
+    app: movie-service
+  ports:
+    - port: 3002
+      targetPort: 3002

@@ -1,0 +1,106 @@
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: movie-ingress
+#   namespace: movie-app
+#   annotations:
+#     nginx.ingress.kubernetes.io/rewrite-target: /
+# spec:
+#   rules:
+#     - host: movie-app.local
+#       http:
+#         paths:
+#           - path: /api/bookings
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: booking-service
+#                 port:
+#                   number: 3003
+
+#           - path: /api/showtimes
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: showtime-service
+#                 port:
+#                   number: 3004
+
+#           - path: /api/user
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: user-service
+#                 port:
+#                   number: 3001
+
+#           - path: /api/movies
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: movie-service
+#                 port:
+#                   number: 3002
+
+#           - path: /
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: frontend
+#                 port:
+#                   number: 80
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: movie-ingress
+  namespace: movie-app
+  # annotations:
+  #   nginx.ingress.kubernetes.io/rewrite-target: /
+  #   nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - host: movie-app.local
+      http:
+        paths:
+          - path: /api/bookings
+            pathType: Prefix
+            backend:
+              service:
+                name: booking-service
+                port:
+                  number: 3003
+
+          - path: /api/showtimes
+            pathType: Prefix
+            backend:
+              service:
+                name: showtime-service
+                port:
+                  number: 3004
+
+          - path: /api/user
+            pathType: Prefix
+            backend:
+              service:
+                name: user-service
+                port:
+                  number: 3001
+
+          - path: /api/movies
+            pathType: Prefix
+            backend:
+              service:
+                name: movie-service
+                port:
+                  number: 3002
+
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
+
+
+

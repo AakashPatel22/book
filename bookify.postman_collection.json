@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "bf12ecab-a38c-4154-86b6-e15514e2da06",
+		"name": "bookify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44840339",
+		"_collection_link": "https://aakash-9852446.postman.co/workspace/Aakash's-Workspace~2b310e4c-c5ba-4e59-81bd-333405e8c071/collection/44840339-bf12ecab-a38c-4154-86b6-e15514e2da06?action=share&source=collection_link&creator=44840339"
+	},
+	"item": [
+		{
+			"name": "Movie Service",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wNS0xMFQyMjo1NjoxNC41MTc4OTMwNzAiLCJyb2xlIjoiVVNFUiIsIm1lc3NhZ2UiOiJzb21lIG90aGVyIG1lc3NhZ2UiLCJzdWIiOiJqb2huX2RvZSIsImlhdCI6MTc0Njg5Nzk3NCwiZXhwIjoxNzQ2OTE1OTc0fQ.HAZkdTy7mlztgCj-IyQ6Kd6iuQZ4oG1hfHmemAUg-7A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-Role",
+								"value": "USER",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Id",
+								"value": "john_doe",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3002/api/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wNS0xMFQyMjo1NjoxNC41MTc4OTMwNzAiLCJyb2xlIjoiVVNFUiIsIm1lc3NhZ2UiOiJzb21lIG90aGVyIG1lc3NhZ2UiLCJzdWIiOiJqb2huX2RvZSIsImlhdCI6MTc0Njg5Nzk3NCwiZXhwIjoxNzQ2OTE1OTc0fQ.HAZkdTy7mlztgCj-IyQ6Kd6iuQZ4oG1hfHmemAUg-7A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-Role",
+								"value": "USER",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Id",
+								"value": "john_doe",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3002/api/movies/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Showtime Service",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wNS0xMFQyMjo1NjoxNC41MTc4OTMwNzAiLCJyb2xlIjoiVVNFUiIsIm1lc3NhZ2UiOiJzb21lIG90aGVyIG1lc3NhZ2UiLCJzdWIiOiJqb2huX2RvZSIsImlhdCI6MTc0Njg5Nzk3NCwiZXhwIjoxNzQ2OTE1OTc0fQ.HAZkdTy7mlztgCj-IyQ6Kd6iuQZ4oG1hfHmemAUg-7A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-Role",
+								"value": "USER",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Id",
+								"value": "john_doe",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3004/api/showtimes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"api",
+								"showtimes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get showtime",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wNS0xMFQyMjo1NjoxNC41MTc4OTMwNzAiLCJyb2xlIjoiVVNFUiIsIm1lc3NhZ2UiOiJzb21lIG90aGVyIG1lc3NhZ2UiLCJzdWIiOiJqb2huX2RvZSIsImlhdCI6MTc0Njg5Nzk3NCwiZXhwIjoxNzQ2OTE1OTc0fQ.HAZkdTy7mlztgCj-IyQ6Kd6iuQZ4oG1hfHmemAUg-7A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-Role",
+								"value": "USER",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Id",
+								"value": "john_doe",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3004/api/showtimes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"api",
+								"showtimes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking Service",
+			"item": [
+				{
+					"name": "booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wNS0xMFQyMjo1NjoxNC41MTc4OTMwNzAiLCJyb2xlIjoiVVNFUiIsIm1lc3NhZ2UiOiJzb21lIG90aGVyIG1lc3NhZ2UiLCJzdWIiOiJqb2huX2RvZSIsImlhdCI6MTc0Njg5Nzk3NCwiZXhwIjoxNzQ2OTE1OTc0fQ.HAZkdTy7mlztgCj-IyQ6Kd6iuQZ4oG1hfHmemAUg-7A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-Role",
+								"value": "USER",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Id",
+								"value": "john_doe",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 1,\n  \"showtimeId\": 2,\n  \"seatsBooked\": 3\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wNS0xMFQyMjo1NjoxNC41MTc4OTMwNzAiLCJyb2xlIjoiVVNFUiIsIm1lc3NhZ2UiOiJzb21lIG90aGVyIG1lc3NhZ2UiLCJzdWIiOiJqb2huX2RvZSIsImlhdCI6MTc0Njg5Nzk3NCwiZXhwIjoxNzQ2OTE1OTc0fQ.HAZkdTy7mlztgCj-IyQ6Kd6iuQZ4oG1hfHmemAUg-7A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-Role",
+								"value": "USER",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Id",
+								"value": "john_doe",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3003/api/bookings/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"bookings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get for showtime",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJkYXRlIjoiMjAyNS0wNS0xMFQyMjo1NjoxNC41MTc4OTMwNzAiLCJyb2xlIjoiVVNFUiIsIm1lc3NhZ2UiOiJzb21lIG90aGVyIG1lc3NhZ2UiLCJzdWIiOiJqb2huX2RvZSIsImlhdCI6MTc0Njg5Nzk3NCwiZXhwIjoxNzQ2OTE1OTc0fQ.HAZkdTy7mlztgCj-IyQ6Kd6iuQZ4oG1hfHmemAUg-7A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-Role",
+								"value": "USER",
+								"type": "text"
+							},
+							{
+								"key": "X-User-Id",
+								"value": "john_doe",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3003/api/bookings?showtimeId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"bookings"
+							],
+							"query": [
+								{
+									"key": "showtimeId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"john_doe\",\n  \"password\": \"securePassword123\",\n  \"role\": \"USER\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"john_doe\",\n  \"password\": \"securePassword123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

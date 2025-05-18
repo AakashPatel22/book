@@ -1,0 +1,76 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: mysql
+#   namespace: movie-app
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: mysql
+#   template:
+#     metadata:
+#       labels:
+#         app: mysql
+#     spec:
+#       containers:
+#         - name: mysql
+#           image: mysql:8
+#           env:
+#             - name: MYSQL_ROOT_PASSWORD
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: app-secrets
+#                   key: SPRING_DATASOURCE_PASSWORD
+#             - name: MYSQL_DATABASE
+#               value: movie_ticketing
+#           ports:
+#             - containerPort: 3306
+#           volumeMounts:
+#             - name: mysql-pvc
+#               mountPath: /var/lib/mysql
+#       volumes:
+#         - name: mysql-pvc
+#           persistentVolumeClaim:
+#             claimName: mysql-pvc
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: movie-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:8
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: SPRING_DATASOURCE_PASSWORD
+            - name: MYSQL_DATABASE
+              value: movie_ticketing
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-pvc
+              mountPath: /var/lib/mysql
+            - name: init-scripts
+              mountPath: /docker-entrypoint-initdb.d  # MySQL looks here for init scripts
+      volumes:
+        - name: mysql-pvc
+          persistentVolumeClaim:
+            claimName: mysql-pvc
+        - name: init-scripts
+          configMap:
+            name: mysql-init-scripts  # Refers to the ConfigMap created above
+
