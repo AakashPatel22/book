@@ -12,7 +12,7 @@ pipeline {
                 // Checkout the GitHub repository using the provided credentials
                 checkout([$class: 'GitSCM', 
                           branches: [[name: '*/main']], 
-                          userRemoteConfigs: [[url: 'https://github.com/your-username/bookify-v2.git', 
+                          userRemoteConfigs: [[url: 'https://github.com/AakashPatel/book.git', 
                                                credentialsId: 'AakashPatel22']]])
             }
         }
@@ -46,11 +46,20 @@ pipeline {
             }
         }
 
-        stage('Deploy to Kubernetes (via Ansible)') {
+       stage('Run Ansible Playbook') {
             steps {
-                // Run the Ansible playbook for Kubernetes deployment
-                dir('ansible') {
-                    sh 'ansible-playbook -i inventory playbook.yml'
+                script {
+                    withEnv(["ANSIBLE_HOST_KEY_CHECKING=False"]) {
+                        withCredentials([string(credentialsId: 'ansible-vault-password', variable: 'VAULT_PASSWORD')]) {
+                            dir('ansible') {
+                                sh '''
+                                    echo "$VAULT_PASSWORD" > vault_pass.txt
+                                    ansible-playbook -i inventory.ini playbook.yaml --vault-password-file vault_pass.txt
+                                    rm vault_pass.txt
+                                '''
+                            }
+                        }
+                    }
                 }
             }
         }

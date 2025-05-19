@@ -1,4 +1,9 @@
 - name: Start application services and ingress
   shell: ./start.sh
   args:
-    chdir: /path/to/scripts
+    chdir: "{{ (playbook_dir + '/../k8s') | realpath }}"
+  register: app_start
+
+- name: Show application start output
+  debug:
+    var: app_start.stdout_lines
