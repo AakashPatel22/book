@@ -12,7 +12,7 @@ pipeline {
                 // Checkout the GitHub repository using the provided credentials
                 checkout([$class: 'GitSCM', 
                           branches: [[name: '*/main']], 
-                          userRemoteConfigs: [[url: 'https://github.com/AakashPatel/book.git', 
+                          userRemoteConfigs: [[url: 'https://github.com/AakashPatel22/book.git', 
                                                credentialsId: 'AakashPatel22']]])
             }
         }
