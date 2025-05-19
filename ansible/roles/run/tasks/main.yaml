@@ -1,5 +1,5 @@
 - name: Start application services and ingress
-  shell: ./start.sh
+  shell: bash start.sh
   args:
     chdir: "{{ (playbook_dir + '/../k8s-yamls') | realpath }}"
   register: app_start
