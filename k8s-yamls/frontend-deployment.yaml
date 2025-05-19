@@ -18,3 +18,30 @@ spec:
           image: aakashpatel22/frontend:latest
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"
+            limits:
+              cpu: "250m"
+
+
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: frontend
+#   namespace: movie-app
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: frontend
+#   template:
+#     metadata:
+#       labels:
+#         app: frontend
+#     spec:
+#       containers:
+#         - name: frontend
+#           image: aakashpatel22/frontend:latest
+#           ports:
+#             - containerPort: 80
