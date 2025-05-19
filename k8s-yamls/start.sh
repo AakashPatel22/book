@@ -25,6 +25,8 @@ kubectl apply -f booking-service-deployment.yaml \
               -f frontend-deployment.yaml \
               -f frontend-service.yaml -n movie-app
 
+kubectl apply -f hpa.yaml \
+
 echo "Applying ingress..."
 kubectl apply -f ingress.yaml -n movie-app
 kubectl apply -f elk.yaml

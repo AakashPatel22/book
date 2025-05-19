@@ -17,6 +17,8 @@ kubectl delete -f booking-service-deployment.yaml \
                -f frontend-deployment.yaml \
                -f frontend-service.yaml --ignore-not-found=true -n movie-app
 
+kubectl delete -f hpa.yaml \
+
 echo "Deleting MySQL resources..."
 kubectl delete -f mysql-deployment.yaml -f mysql-service.yaml --ignore-not-found=true -n movie-app
 
